@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/input.css" />
+    <link rel="shortcut icon" href="todo-favicon.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script type="module" src="js/main.js"></script>
+    <title>Todo List</title>
+  </head>
+  <body>
+    <main class="h-[100dvh] flex justify-center items-center">
+      <div
+        class="bg-white h-80 md:h-[28rem] md:w-[26rem] w-[18rem] rounded shadow-xl"
+      >
+        <div class="py-6 px-4 relative">
+          <form
+            class="flex justify-between md:justify-between gap-1 h-12 items-center border py-1 w-60 md:w-96 mx-auto px-4 rounded-sm"
+          >
+            <div
+              class="inline-block text-xl text-gray-500 cursor-pointer searching"
+            >
+              <i class="fa-solid fa-magnifying-glass" id="search"></i>
+            </div>
+            <div
+              class="inline-block text-xl text-gray-500 cursor-pointer back hidden"
+            >
+              <i class="fa-solid fa-arrow-left" id="back"></i>
+            </div>
+
+            <input
+              type="text"
+              placeholder="Add a todo"
+              class="outline-none rounded-sm px-2 py-1 placeholder:font-medium font-medium w-48 md:w-80"
+              id="add-todo"
+            />
+          </form>
+          <input
+            type="search"
+            placeholder="Search todo"
+            class="outline-none rounded-sm px-2 py-1 w-48 placeholder:font-medium font-medium hidden absolute top-[2rem] left-[4rem] md:w-80"
+            id="search-todo"
+          />
+          <div
+            class="px-4 md:px-0 flex items-center justify-between md:justify-around py-1 font-semibold mt-2"
+          >
+            <li
+              class="list-none text-sm md:text-base active cursor-pointer toggle"
+              id="all"
+            >
+              All
+            </li>
+            <li
+              class="list-none text-sm md:text-base cursor-pointer toggle"
+              id="pending"
+            >
+              Pending
+            </li>
+            <li
+              class="list-none text-sm md:text-base cursor-pointer toggle"
+              id="completed"
+            >
+              Completed
+            </li>
+            <li class="list-none text-sm md:text-base">
+              <button
+                class="px-3 py-[0.2rem] active:scale-95 duration-300 bg-[#c25dea] outline-none font-semibold rounded-sm hover:shadow-md text-white"
+                id="clear"
+              >
+                Clear
+              </button>
+            </li>
+          </div>
+        </div>
+
+        <div class="bg-gray-200 w-full h-0.5 -mt-4"></div>
+
+        <div
+          id="list"
+          class="overflow-y-auto overflow-x-hidden h-72 w-[18rem] md:h-80 md:w-[26rem] rounded bg-white"
+        >
+          <template>
+            <div class="py-2 px-4 w-fit md:w-[23.5rem] parent mx-auto">
+              <div
+                class="flex justify-between items-center gap-1 md:gap-2 md:text-base text-sm todo"
+              >
+                <input type="checkbox" id="check" class="accent-[#d06fdf]" />
+                <input
+                  readonly
+                  type="text"
+                  class="flex-1 outline-none cursor-default select-none"
+                />
+                <div
+                  class="flex gap-4 md:gap-6 justify-between items-center md:text-base text-sm"
+                >
+                  <div class="cursor-pointer edited text-[#d06fdf]">
+                    <i class="fa-solid fa-pen" id="edit"></i>
+                  </div>
+                  <div class="cursor-pointer hidden save text-[#d06fdf]">
+                    <i class="fa-sharp fa-solid fa-floppy-disk"></i>
+                  </div>
+                  <div class="cursor-pointer text-[#d06fdf]">
+                    <i class="fa-sharp fa-solid fa-trash" id="delete"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+::selection {
+  background-color: #d06fdf;
+  color: white;
+}
+
+.active {
+  color: blueviolet;
+}
+
+body {
+  background: linear-gradient(to bottom, #c25dea, #d06fdf);
+  user-select: none;
+}
